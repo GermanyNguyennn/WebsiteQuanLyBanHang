@@ -1,0 +1,24 @@
+﻿@model IEnumerable<WebsiteQuanLyBanHang.Models.EF.Order>
+@if (Model != null)
+{
+    var i = 1;
+    <h4>Lịch Sử Mua Hàng</h4>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <td>STT</td>
+                <td>Mã Đơn Hàng</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@i</td>
+                    <td>@item.Code</td>
+                </tr>
+                i++;
+            }
+        </tbody>
+    </table>
+}

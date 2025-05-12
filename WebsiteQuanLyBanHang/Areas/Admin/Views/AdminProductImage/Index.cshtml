@@ -1,0 +1,115 @@
+﻿@model IEnumerable<WebsiteQuanLyBanHang.Models.EF.ProductImage>
+@{
+    ViewBag.Title = "Ảnh Sản Phẩm";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .glImage {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+
+        .glImage li {
+            display: inline-block;
+            position: relative;
+        }
+
+    .box-btn {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+</style>
+
+<!-- Main content -->
+<section class="content">
+
+    <!-- Default box -->
+    <div class="card">
+        <div class="card-header">
+
+            <div class="card-tools">
+                <button type="button" class="btn btn-danger">
+                    Xoá Hết Ảnh
+                </button>
+                <input type="button" value="Tải Ảnh" class="btn btn-success" onclick="BrowserServer('txtImage');" />
+            </div>
+        </div>
+        <div class="card-body">
+            <ul class="glImage">
+                @if (Model != null)
+                {
+                    foreach (var item in Model)
+                    {
+                        <li id="trow_@item.Id">
+                            <img src="@item.Image" width="200" />
+                            <div class="box-btn">
+                                <a href="#" data-id="@item.Id" class="btn btn-sm btn-danger btnDelete"><i class="fa fa-trash"></i></a>
+                                @if (item.IsDefault)
+                                {
+                                    <a href="#" data-id="@item.Id" class="btn btn-sm btn-success btnDefault"><i class="fa fa-check"></i></a>
+                                }
+
+                            </div>
+                        </li>
+                    }
+                }
+            </ul>
+        </div>
+        <!-- /.card-body -->
+        <div class="card-footer">
+        </div>
+        <!-- /.card-footer-->
+    </div>
+    <!-- /.card -->
+
+</section>
+<!-- /.content -->
+
+@section scripts
+{
+    <script>
+    function BrowserServer(field) {
+        var finder = new CKFinder();
+        finder.selectActionFunction = function (fileURL) {
+            AddImage(@ViewBag.productId, fileURL);
+        };
+        finder.popup();
+    }
+
+    function AddImage(id, url) {
+        $.ajax({
+            url: '/Admin/AdminProductImage/AddImage',
+            type: 'POST',
+            data: { productId: id, url: url },
+            success: function (rs) {
+                if (rs.success) {
+                    location.location.reload();
+                }
+            }
+        });
+    }
+
+    $(document).ready(function () {
+        $('body').on('click', '.btnDelete', function () {
+            var id = $(this).data("id");
+            var conf = confirm('Bạn Có Muốn Xoá Bản Ghi Này Không?');
+            if (conf == true) {
+                $.ajax({
+                    url: '/Admin/AdminProductImage/Delete',
+                    type: 'POST',
+                    data: { id: id },
+                    success: function (rs) {
+                        if (rs.success) {
+                            $('#trow_' + id).remove();
+                        }
+                    }
+                });
+            }
+        });
+    });
+    </script>
+}
