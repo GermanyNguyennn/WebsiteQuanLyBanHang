@@ -1,8 +1,9 @@
 ﻿@model IEnumerable<WebsiteQuanLyBanHang.Models.ShoppingCartItem>
 @using WebsiteQuanLyBanHang.Common
-@{
-    ViewBag.Title = "PartialItemCart";
-}
+
+<style>
+
+</style>
 
 <table class="table">
     <tr class="text-center">
@@ -11,7 +12,6 @@
         <th>Tên Sản Phẩm</th>
         <th>Danh Mục</th>
         <th>Giá</th>
-
         <th style="width:100px;">Số Lượng</th>
         <th>Thành Tiền</th>
         <th style="width:200px;"></th>
@@ -33,18 +33,28 @@
                 </td>
                 <td>@item.CategoryName</td>
                 <td>@Common.FormatNumber(item.Price, 0)</td>
-                <td><input type="number" class="form-control" id="quantity_@item.ProductId" value="@item.Quantity" /></td>
-                <th>@Common.FormatNumber(item.TotalPrice, 2)</th>
                 <td>
-                    <a href="#" data-id="@item.ProductId" class="btn btn-sm btn-danger btnDelete">Xóa</a>
-                    <a href="#" data-id="@item.ProductId" class="btn btn-sm btn-success btnUpdate">Cập nhật</a>
+                    <input type="number"
+                           class="form-control quantity-input"
+                           id="quantity_@item.ProductId"
+                           value="@item.Quantity"
+                           min="1"
+                           data-id="@item.ProductId"
+                           data-price="@item.Price" />
+                </td>
+                <th class="line-total" data-id="@item.ProductId">
+                    @Common.FormatNumber(item.TotalPrice, 2)
+                </th>
+                <td>
+                    <a href="#" data-id="@item.ProductId" class="btn btn-sm btn-danger btnDelete">Delete</a>
+                    @*<a href="#" data-id="@item.ProductId" class="btn btn-sm btn-success btnUpdate">Cập nhật</a>*@
                 </td>
             </tr>
             i++;
         }
         <tr>
             <th colspan="6" class="text-right">Tổng: </th>
-            <th class="text-center">@Common.FormatNumber(tongtien, 0)</th>
+            <th class="text-center total-amount">@Common.FormatNumber(tongtien, 0)</th>
             <th></th>
         </tr>
     }
@@ -55,4 +65,35 @@
         </tr>
     }
 </table>
+
+<script>
+    $(document).ready(function () {
+        $('.quantity-input').on('change', function () {
+            var productId = $(this).data('id');
+            var quantity = $(this).val();
+
+            if (quantity <= 0) {
+                alert("Số lượng phải lớn hơn 0");
+                $(this).val(1);
+                quantity = 1;
+            }
+
+            $.ajax({
+                url: '/ShoppingCart/UpdateQuantity',
+                type: 'POST',
+                data: {
+                    id: productId,
+                    quantity: quantity
+                },
+                success: function (response) {
+                    if (response.success) {
+                        location.reload();
+                    } else {
+                        alert(response.message);
+                    }
+                }
+            });
+        });
+    });
+</script>
 

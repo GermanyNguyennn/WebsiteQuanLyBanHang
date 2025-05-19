@@ -11,7 +11,7 @@ using PagedList;
 
 namespace WebsiteQuanLyBanHang.Areas.Admin.Controllers
 {
-    //[Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     public class AdminAdvController : Controller
     {
         // GET: Admin/Adv

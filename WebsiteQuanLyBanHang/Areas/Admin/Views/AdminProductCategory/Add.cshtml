@@ -69,6 +69,17 @@
                             @Html.TextAreaFor(x => x.Description, new { @class = "form-control" })
                         </div>
                         <div class="form-group">
+                            <label for="exampleInputFile">Ảnh</label>
+                            <div class="input-group">
+                                <div class="custom-file">
+                                    @Html.TextBoxFor(x => x.Icon, new { @id = "txtImage", @class = "form-control" })
+                                </div>
+                                <div class="input-group-append">
+                                    <input type="button" value="Tải Ảnh" onclick="BrowserServer('txtImage');" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <label for="exampleInputPassword1">Seo Title</label>
                             @Html.TextAreaFor(x => x.SeoTitle, new { @class = "form-control" })
                         </div>
@@ -98,3 +109,23 @@
 
 </section>
 <!-- /.content -->
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            CKEDITOR.replace('txtDetail', {
+                customConfig: '/Content/ckeditor/config.js',
+                extraAllowedContent: 'span',
+            });
+        });
+
+        function BrowserServer(field) {
+            var finder = new CKFinder();
+            finder.selectActionFunction = function (fileURL) {
+                document.getElementById(field).value = fileURL;
+            };
+            finder.popup();
+        }
+    </script>
+}

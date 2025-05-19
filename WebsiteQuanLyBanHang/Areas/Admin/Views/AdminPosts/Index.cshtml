@@ -149,7 +149,7 @@
                     var conf = confirm('Bạn Có Muốn Xoá Toàn Bộ Bản Ghi Không?');
                     if (conf == true) {
                         $.ajax({
-                            url: '/Admin/AdminPost/DeleteAll',
+                            url: '/Admin/AdminPosts/DeleteAll',
                             type: 'POST',
                             data: { ids: str },
                             success: function (rs) {
@@ -181,7 +181,7 @@
                 var conf = confirm('Bạn Có Muốn Xoá Bản Ghi Này Không?');
                 if (conf == true) {
                     $.ajax({
-                        url: '/Admin/AdminPost/Delete',
+                        url: '/Admin/AdminPosts/Delete',
                         type: 'POST',
                         data: { id: id },
                         success: function (rs) {
@@ -199,7 +199,7 @@
                 var btn = $(this);
                 var id = btn.data("id");
                 $.ajax({
-                    url: '/Admin/AdminPost/IsActive',
+                    url: '/Admin/AdminPosts/IsActive',
                     type: 'POST',
                     data: { id: id },
                     success: function (rs) {

@@ -16,7 +16,7 @@ namespace WebsiteQuanLyBanHang.Controllers
             return View();
         }
 
-        public ActionResult PartialSubcrice()
+        public ActionResult PartialSubcribe()
         {
             return PartialView();
         }
@@ -28,9 +28,9 @@ namespace WebsiteQuanLyBanHang.Controllers
             {
                 db.Subscribes.Add(new Subscribe { Email = req.Email, CreatedDate = DateTime.Now });
                 db.SaveChanges();
-                return Json(new { Success = true });
+                return Json(new { success = true });
             }
-            return View("PartialSubcrice", req);
+            return View("PartialSubcribe", req);
         }
         public ActionResult About()
         {

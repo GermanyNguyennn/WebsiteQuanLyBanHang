@@ -16,7 +16,8 @@
 
 }, new { @Id = "myForm" }))
 {
-    <script>function OnBeginCO() {
+    <script>
+        function OnBeginCO() {
             $('#btnCheckOut').attr("disabled", "disabled");
             $('#load_send').html('<h2>Đang gửi....</h2>');
         }
@@ -29,7 +30,8 @@
                     location.href = res.Url;
                 }
             }
-        }</script>
+        }
+    </script>
 
     @Html.AntiForgeryToken()
 

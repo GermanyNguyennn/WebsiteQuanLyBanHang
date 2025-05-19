@@ -8,6 +8,7 @@ using WebsiteQuanLyBanHang.Models;
 
 namespace WebsiteQuanLyBanHang.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class AdminStatisticalController : Controller
     {
         // GET: Admin/AdminStatistical

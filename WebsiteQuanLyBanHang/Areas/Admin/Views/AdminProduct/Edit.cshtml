@@ -60,7 +60,7 @@
                             <div class="card-header p-2">
                                 <ul class="nav nav-pills">
                                     <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">Thông Tin Chung</a></li>
-                                    @*<li class="nav-item"><a class="nav-link" href="#timeline" data-toggle="tab">Hình Ảnh</a></li>*@
+                                    <li class="nav-item"><a class="nav-link" href="#timeline" data-toggle="tab">Hình Ảnh</a></li>
                                     <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">Seo</a></li>
                                 </ul>
                             </div><!-- /.card-header -->
@@ -155,8 +155,8 @@
                                                 <div class="form-group">
                                                     <div class="custom-control custom-checkbox">
                                                         <div class="custom-control custom-checkbox">
-                                                            @Html.CheckBoxFor(x => x.IsFeature, new { @class = "custom-control-input", @id = "IsFeatureCheckBox" })
-                                                            <label for="IsFeatureCheckBox" class="custom-control-label">Nổi Bật</label>
+                                                            @Html.CheckBoxFor(x => x.IsNew, new { @class = "custom-control-input", @id = "IsNewCheckBox" })
+                                                            <label for="IsNewCheckBox" class="custom-control-label">Mới</label>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -177,7 +177,34 @@
                                             </div>
                                         </div>
                                     </div>
-
+                                    <!-- /.tab-pane -->
+                                    <div class="tab-pane" id="timeline">
+                                        <div class="row">
+                                            <div class="col-md-12 text-right">
+                                                <input type="button" class="btn btn-primary" id="btnTaiAnh" onclick="BrowserServer();" value="Tải Ảnh" />
+                                            </div>
+                                            <div class="col-md-12">
+                                                <table class="table table-hover" id="tbAnhSanPham">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>#</th>
+                                                            <th>Ảnh</th>
+                                                            <th>Ảnh Đại Diện</th>
+                                                            <th>Thao Tác</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody id="tbHtml">
+                                                    </tbody>
+                                                </table>
+                                                <input type="hidden" id="txtCurrentId" value="0" />
+                                            </div>
+                                            <div class="form-group">
+                                                <a href="/Admin/Product" class="btn btn-danger">Quay Lại</a>
+                                                <button type="submit" class="btn btn-primary">@ViewBag.Title</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- /.tab-pane -->
                                     <div class="tab-pane" id="settings">
                                         <form class="form-horizontal">
                                             <div class="form-group row">

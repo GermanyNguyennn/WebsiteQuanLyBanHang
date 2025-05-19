@@ -58,7 +58,6 @@ namespace WebsiteQuanLyBanHang.Models
         {
             items.Clear();
         }
-
     }
 
     public class ShoppingCartItem

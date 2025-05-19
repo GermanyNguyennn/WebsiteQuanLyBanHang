@@ -13,6 +13,7 @@ namespace WebsiteQuanLyBanHang.Models.EF
         public ProductCategory()
         {
             this.Products = new HashSet<Product>();
+            //this.ProductImages = new HashSet<ProductImage>();
         }
 
         [Key]
@@ -34,5 +35,6 @@ namespace WebsiteQuanLyBanHang.Models.EF
         public string SeoKeyWords { get; set; }
 
         public ICollection<Product> Products { get; set; }
+        //public virtual ICollection<ProductImage> ProductImages { get; set; }
     }
 }

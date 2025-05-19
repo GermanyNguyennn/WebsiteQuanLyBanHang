@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WebsiteQuanLyBanHang.Models;
+using WebsiteQuanLyBanHang.Models.EF;
 
 namespace WebsiteQuanLyBanHang.Controllers
 {
@@ -18,8 +19,8 @@ namespace WebsiteQuanLyBanHang.Controllers
 
         public ActionResult MenuTop()
         {
-            var items = db.Categories.OrderBy(c => c.Position).ToList();
-            return PartialView("_MenuTop", items);
+            var items = db.Categories.OrderBy(x => x.Position).ToList();
+            return PartialView("MenuTop", items);
         }
 
         public ActionResult MenuLeft(int? id)
@@ -29,19 +30,19 @@ namespace WebsiteQuanLyBanHang.Controllers
                 ViewBag.CategoryId = id;
             }
             var items = db.ProductCategories.ToList();
-            return PartialView("_MenuLeft", items);
+            return PartialView("MenuLeft", items);
         }
 
         public ActionResult MenuProductCategory()
         {
             var items = db.ProductCategories.ToList();
-            return PartialView("_MenuProductCategory", items);
+            return PartialView("MenuProductCategory", items);
         }
 
         public ActionResult MenuArrivals()
         {
             var items = db.ProductCategories.ToList();
-            return PartialView("_MenuArrivals", items);
+            return PartialView("MenuArrivals", items);
         }
     }
 }

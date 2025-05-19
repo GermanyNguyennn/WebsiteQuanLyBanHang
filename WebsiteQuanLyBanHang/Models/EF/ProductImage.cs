@@ -21,5 +21,6 @@ namespace WebsiteQuanLyBanHang.Models.EF
         public bool IsDefault { get; set; }
 
         public virtual Product Products { get; set; }
+        //public virtual ProductCategory ProductCategories { get; set; }
     }
 }

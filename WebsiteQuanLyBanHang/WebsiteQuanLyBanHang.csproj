@@ -220,17 +220,25 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202505120335168_CreateDatabase.cs" />
-    <Compile Include="Migrations\202505120335168_CreateDatabase.Designer.cs">
-      <DependentUpon>202505120335168_CreateDatabase.cs</DependentUpon>
+    <Compile Include="Migrations\202505131517379_CreateDatabase.cs" />
+    <Compile Include="Migrations\202505131517379_CreateDatabase.Designer.cs">
+      <DependentUpon>202505131517379_CreateDatabase.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202505120401313_UpdateTablePosts.cs" />
-    <Compile Include="Migrations\202505120401313_UpdateTablePosts.Designer.cs">
-      <DependentUpon>202505120401313_UpdateTablePosts.cs</DependentUpon>
+    <Compile Include="Migrations\202505140245168_Update_14052025.cs" />
+    <Compile Include="Migrations\202505140245168_Update_14052025.Designer.cs">
+      <DependentUpon>202505140245168_Update_14052025.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202505120623096_UpdateTableProduct.cs" />
-    <Compile Include="Migrations\202505120623096_UpdateTableProduct.Designer.cs">
-      <DependentUpon>202505120623096_UpdateTableProduct.cs</DependentUpon>
+    <Compile Include="Migrations\202505140359288_Update_14052025_1.cs" />
+    <Compile Include="Migrations\202505140359288_Update_14052025_1.Designer.cs">
+      <DependentUpon>202505140359288_Update_14052025_1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202505180301434_Update_18052025.cs" />
+    <Compile Include="Migrations\202505180301434_Update_18052025.Designer.cs">
+      <DependentUpon>202505180301434_Update_18052025.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202505181014346_Update_18052025_1.cs" />
+    <Compile Include="Migrations\202505181014346_Update_18052025_1.Designer.cs">
+      <DependentUpon>202505181014346_Update_18052025_1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -265,6 +273,59 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\assets\dist\css\adminlte.css" />
+    <Content Include="Content\assets\dist\css\adminlte.min.css" />
+    <Content Include="Content\assets\dist\css\alt\adminlte.components.css" />
+    <Content Include="Content\assets\dist\css\alt\adminlte.components.min.css" />
+    <Content Include="Content\assets\dist\css\alt\adminlte.core.css" />
+    <Content Include="Content\assets\dist\css\alt\adminlte.core.min.css" />
+    <Content Include="Content\assets\dist\css\alt\adminlte.extra-components.css" />
+    <Content Include="Content\assets\dist\css\alt\adminlte.extra-components.min.css" />
+    <Content Include="Content\assets\dist\css\alt\adminlte.light.css" />
+    <Content Include="Content\assets\dist\css\alt\adminlte.light.min.css" />
+    <Content Include="Content\assets\dist\css\alt\adminlte.pages.css" />
+    <Content Include="Content\assets\dist\css\alt\adminlte.pages.min.css" />
+    <Content Include="Content\assets\dist\css\alt\adminlte.plugins.css" />
+    <Content Include="Content\assets\dist\css\alt\adminlte.plugins.min.css" />
+    <Content Include="Content\assets\dist\img\AdminLTELogo.png" />
+    <Content Include="Content\assets\dist\img\avatar.png" />
+    <Content Include="Content\assets\dist\img\avatar2.png" />
+    <Content Include="Content\assets\dist\img\avatar3.png" />
+    <Content Include="Content\assets\dist\img\avatar4.png" />
+    <Content Include="Content\assets\dist\img\avatar5.png" />
+    <Content Include="Content\assets\dist\img\boxed-bg.jpg" />
+    <Content Include="Content\assets\dist\img\boxed-bg.png" />
+    <Content Include="Content\assets\dist\img\credit\american-express.png" />
+    <Content Include="Content\assets\dist\img\credit\cirrus.png" />
+    <Content Include="Content\assets\dist\img\credit\mastercard.png" />
+    <Content Include="Content\assets\dist\img\credit\paypal.png" />
+    <Content Include="Content\assets\dist\img\credit\paypal2.png" />
+    <Content Include="Content\assets\dist\img\credit\visa.png" />
+    <Content Include="Content\assets\dist\img\default-150x150.png" />
+    <Content Include="Content\assets\dist\img\icons.png" />
+    <Content Include="Content\assets\dist\img\photo1.png" />
+    <Content Include="Content\assets\dist\img\photo2.png" />
+    <Content Include="Content\assets\dist\img\photo3.jpg" />
+    <Content Include="Content\assets\dist\img\photo4.jpg" />
+    <Content Include="Content\assets\dist\img\prod-1.jpg" />
+    <Content Include="Content\assets\dist\img\prod-2.jpg" />
+    <Content Include="Content\assets\dist\img\prod-3.jpg" />
+    <Content Include="Content\assets\dist\img\prod-4.jpg" />
+    <Content Include="Content\assets\dist\img\prod-5.jpg" />
+    <Content Include="Content\assets\dist\img\user1-128x128.jpg" />
+    <Content Include="Content\assets\dist\img\user2-160x160.jpg" />
+    <Content Include="Content\assets\dist\img\user3-128x128.jpg" />
+    <Content Include="Content\assets\dist\img\user4-128x128.jpg" />
+    <Content Include="Content\assets\dist\img\user5-128x128.jpg" />
+    <Content Include="Content\assets\dist\img\user6-128x128.jpg" />
+    <Content Include="Content\assets\dist\img\user7-128x128.jpg" />
+    <Content Include="Content\assets\dist\img\user8-128x128.jpg" />
+    <Content Include="Content\assets\dist\js\adminlte.js" />
+    <Content Include="Content\assets\dist\js\adminlte.min.js" />
+    <Content Include="Content\assets\dist\js\demo.js" />
+    <Content Include="Content\assets\dist\js\pages\dashboard.js" />
+    <Content Include="Content\assets\dist\js\pages\dashboard2.js" />
+    <Content Include="Content\assets\dist\js\pages\dashboard3.js" />
     <Content Include="Content\assets\images\banner_1.jpg" />
     <Content Include="Content\assets\images\banner_2.jpg" />
     <Content Include="Content\assets\images\banner_3.jpg" />
@@ -3107,8 +3168,8 @@
     <Content Include="Content\clients\plugins\uplot\uPlot.iife.min.js" />
     <Content Include="Content\clients\plugins\uplot\uPlot.min.css" />
     <Content Include="Content\PagedList.css" />
-    <Content Include="Content\templates\send1.html" />
-    <Content Include="Content\templates\send2.html" />
+    <Content Include="Content\templates\sendAdmin.html" />
+    <Content Include="Content\templates\sendCustomer.html" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -3282,6 +3343,23 @@
     <Content Include="Content\ckeditor\samples\plugins\htmlwriter\assets\outputforflash\outputforflash.fla" />
     <Content Include="Content\ckeditor\skins\moono\readme.md" />
     <Content Include="Content\ckfinder\plugins\fileeditor\codemirror\LICENSE" />
+    <Content Include="Content\assets\dist\css\adminlte.css.map" />
+    <Content Include="Content\assets\dist\css\adminlte.min.css.map" />
+    <Content Include="Content\assets\dist\css\alt\adminlte.components.css.map" />
+    <Content Include="Content\assets\dist\css\alt\adminlte.components.min.css.map" />
+    <Content Include="Content\assets\dist\css\alt\adminlte.core.css.map" />
+    <Content Include="Content\assets\dist\css\alt\adminlte.core.min.css.map" />
+    <Content Include="Content\assets\dist\css\alt\adminlte.extra-components.css.map" />
+    <Content Include="Content\assets\dist\css\alt\adminlte.extra-components.min.css.map" />
+    <Content Include="Content\assets\dist\css\alt\adminlte.light.css.map" />
+    <Content Include="Content\assets\dist\css\alt\adminlte.light.min.css.map" />
+    <Content Include="Content\assets\dist\css\alt\adminlte.pages.css.map" />
+    <Content Include="Content\assets\dist\css\alt\adminlte.pages.min.css.map" />
+    <Content Include="Content\assets\dist\css\alt\adminlte.plugins.css.map" />
+    <Content Include="Content\assets\dist\css\alt\adminlte.plugins.min.css.map" />
+    <Content Include="Content\assets\dist\js\.eslintrc.json" />
+    <Content Include="Content\assets\dist\js\adminlte.js.map" />
+    <Content Include="Content\assets\dist\js\adminlte.min.js.map" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />
@@ -3331,12 +3409,11 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Account\Profile.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
-    <Content Include="Views\Home\PartialSubcrice.cshtml" />
+    <Content Include="Views\Home\PartialSubcribe.cshtml" />
     <Content Include="Views\Home\Refresh.cshtml" />
-    <Content Include="Views\Menu\_MenuTop.cshtml" />
-    <Content Include="Views\Menu\_MenuLeft.cshtml" />
-    <Content Include="Views\Menu\_MenuProductCategory.cshtml" />
-    <Content Include="Views\Menu\_MenuArrivals.cshtml" />
+    <Content Include="Views\Menu\MenuLeft.cshtml" />
+    <Content Include="Views\Menu\MenuProductCategory.cshtml" />
+    <Content Include="Views\Menu\MenuArrivals.cshtml" />
     <Content Include="Views\News\Index.cshtml" />
     <Content Include="Views\News\Detail.cshtml" />
     <Content Include="Views\News\PartialNews.cshtml" />
@@ -3345,7 +3422,7 @@
     <Content Include="Views\Product\PartialItemsByCategoryId.cshtml" />
     <Content Include="Views\Product\PartialProductSale.cshtml" />
     <Content Include="Views\Product\ProductCategory.cshtml" />
-    <Content Include="Views\Product\ProductDetail.cshtml" />
+    <Content Include="Views\Product\Detail.cshtml" />
     <Content Include="Views\ReviewProduct\Index.cshtml" />
     <Content Include="Views\ReviewProduct\Review.cshtml" />
     <Content Include="Views\ReviewProduct\OrderHistory.cshtml" />
@@ -3358,6 +3435,7 @@
     <Content Include="Views\ShoppingCart\PartialItemCart.cshtml" />
     <Content Include="Views\Wishlist\Index.cshtml" />
     <Content Include="Views\Posts\Detail.cshtml" />
+    <Content Include="Views\Menu\MenuTop.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -3392,14 +3470,20 @@
     <Content Include="Scripts\jquery-3.7.0.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202505120335168_CreateDatabase.resx">
-      <DependentUpon>202505120335168_CreateDatabase.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202505131517379_CreateDatabase.resx">
+      <DependentUpon>202505131517379_CreateDatabase.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202505120401313_UpdateTablePosts.resx">
-      <DependentUpon>202505120401313_UpdateTablePosts.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202505140245168_Update_14052025.resx">
+      <DependentUpon>202505140245168_Update_14052025.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202505120623096_UpdateTableProduct.resx">
-      <DependentUpon>202505120623096_UpdateTableProduct.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202505140359288_Update_14052025_1.resx">
+      <DependentUpon>202505140359288_Update_14052025_1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202505180301434_Update_18052025.resx">
+      <DependentUpon>202505180301434_Update_18052025.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202505181014346_Update_18052025_1.resx">
+      <DependentUpon>202505181014346_Update_18052025_1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
@@ -3421,6 +3505,8 @@
           <DevelopmentServerPort>54001</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:54001/</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://localhost:54001/</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

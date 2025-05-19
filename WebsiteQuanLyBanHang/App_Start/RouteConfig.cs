@@ -56,9 +56,9 @@ namespace WebsiteQuanLyBanHang
             );
 
             routes.MapRoute(
-                name: "ProductDetail",
+                name: "Detail",
                 url: "chi-tiet-san-pham/{alias}-p{id}",
-                defaults: new { controller = "Product", action = "ProductDetail", Alias = UrlParameter.Optional },
+                defaults: new { controller = "Product", action = "Detail", Alias = UrlParameter.Optional },
                 namespaces: new[] { "WebsiteQuanLyBanHang.Controllers" }
             );
 

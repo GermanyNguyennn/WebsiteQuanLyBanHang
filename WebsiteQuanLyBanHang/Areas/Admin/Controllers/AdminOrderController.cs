@@ -11,7 +11,7 @@ using WebsiteQuanLyBanHang.Models.EF;
 
 namespace WebsiteQuanLyBanHang.Areas.Admin.Controllers
 {
-    //[Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     public class AdminOrderController : Controller
     {
         // GET: Admin/AdminOrder
@@ -87,8 +87,8 @@ namespace WebsiteQuanLyBanHang.Areas.Admin.Controllers
             var result = query.GroupBy(x => DbFunctions.TruncateTime(x.CreatedDate)).Select(r => new
             {
                 Date = r.Key.Value,
-                TotalBuy = r.Sum(x => x.OriginalPrice * x.Quantity), // tổng giá bán
-                TotalSell = r.Sum(x => x.Price * x.Quantity) // tổng giá mua
+                TotalBuy = r.Sum(x => x.OriginalPrice * x.Quantity),
+                TotalSell = r.Sum(x => x.Price * x.Quantity)
             }).Select(x => new RevenueStatisticViewModel
             {
                 Date = x.Date,

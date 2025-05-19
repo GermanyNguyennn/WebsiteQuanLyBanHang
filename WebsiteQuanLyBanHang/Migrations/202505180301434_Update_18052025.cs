@@ -1,0 +1,22 @@
+﻿namespace WebsiteQuanLyBanHang.Migrations
+{
+    using System;
+    using System.Data.Entity.Migrations;
+    
+    public partial class Update_18052025 : DbMigration
+    {
+        public override void Up()
+        {
+            AddColumn("dbo.Table_ProductImage", "ProductCategories_Id", c => c.Int());
+            CreateIndex("dbo.Table_ProductImage", "ProductCategories_Id");
+            AddForeignKey("dbo.Table_ProductImage", "ProductCategories_Id", "dbo.Table_ProductCategory", "Id");
+        }
+        
+        public override void Down()
+        {
+            DropForeignKey("dbo.Table_ProductImage", "ProductCategories_Id", "dbo.Table_ProductCategory");
+            DropIndex("dbo.Table_ProductImage", new[] { "ProductCategories_Id" });
+            DropColumn("dbo.Table_ProductImage", "ProductCategories_Id");
+        }
+    }
+}

@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace WebsiteQuanLyBanHang.Areas.Admin.Controllers
 {
-    //[Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     public class AdminHomeController : Controller
     {
         // GET: Admin/AdminHome

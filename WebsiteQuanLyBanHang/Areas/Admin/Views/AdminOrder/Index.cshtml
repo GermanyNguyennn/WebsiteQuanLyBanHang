@@ -79,14 +79,6 @@
                                     {
                                         <span>Đã Thanh Toán</span>
                                     }
-                                    @if (item.Status == 3)
-                                    {
-                                        <span>Hoàn Thành</span>
-                                    }
-                                    @if (item.Status == 4)
-                                    {
-                                        <span>Hủy</span>
-                                    }
                                 </td>
                                 <td>@item.CreatedDate.ToString("dd/MM/yyyy")</td>
                                 <td>
@@ -132,6 +124,9 @@
                 <div class="form-group">
                     <label>Trạng thái</label>
                     <select class="form-control" id="ddTrangThai">
+                        <option value="1">
+                            Chưa Thanh Toán
+                        </option>   
                         <option value="2">
                             Đã Thanh Toán
                         </option>

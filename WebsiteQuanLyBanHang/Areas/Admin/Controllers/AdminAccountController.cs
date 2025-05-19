@@ -11,7 +11,7 @@ using WebsiteQuanLyBanHang.Models;
 
 namespace WebsiteQuanLyBanHang.Areas.Admin.Controllers
 {
-    //[Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     public class AdminAccountController : Controller
     {
         // GET: Admin/AdminAccount

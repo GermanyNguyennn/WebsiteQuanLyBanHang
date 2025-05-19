@@ -9,7 +9,7 @@ using WebsiteQuanLyBanHang.Models.EF;
 
 namespace WebsiteQuanLyBanHang.Areas.Admin.Controllers
 {
-    //[Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     public class AdminCategoryController : Controller
     {
         ApplicationDbContext db = new ApplicationDbContext();

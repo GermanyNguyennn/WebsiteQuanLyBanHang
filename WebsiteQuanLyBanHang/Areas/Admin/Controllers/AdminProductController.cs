@@ -9,7 +9,7 @@ using WebsiteQuanLyBanHang.Models.EF;
 
 namespace WebsiteQuanLyBanHang.Areas.Admin.Controllers
 {
-    //[Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     public class AdminProductController : Controller
     {
         // GET: Admin/AdminProduct
@@ -164,15 +164,15 @@ namespace WebsiteQuanLyBanHang.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public ActionResult IsFeature(int id)
+        public ActionResult IsNew(int id)
         {
             var item = db.Products.Find(id);
             if (item != null)
             {
-                item.IsFeature = !item.IsFeature;
+                item.IsNew = !item.IsNew;
                 db.Entry(item).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
-                return Json(new { success = true, isFeature = item.IsFeature });
+                return Json(new { success = true, isNew = item.IsNew });
             }
             return Json(new { success = false });
         }

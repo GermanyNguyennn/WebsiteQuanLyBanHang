@@ -9,6 +9,7 @@ using WebsiteQuanLyBanHang.Models.EF;
 
 namespace WebsiteQuanLyBanHang.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class AdminProductCategoryController : Controller
     {
         // GET: Admin/AdminProductCategory

@@ -22,14 +22,10 @@ namespace WebsiteQuanLyBanHang.Models.EF
         public int CategoryId { get; set; }
         [StringLength(500)]
         public string Description { get; set; }
-        [StringLength(50)]
         public string SeoTitle { get; set; }
-        [StringLength(50)]
         public string SeoDescription { get; set; }
-        [StringLength(50)]
         public string SeoKeyWords { get; set; }
         [AllowHtml]
-        [StringLength(500)]
         public string Detail { get; set; }
         [StringLength(500)]
         public string Image {  get; set; }

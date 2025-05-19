@@ -15,7 +15,7 @@ namespace WebsiteQuanLyBanHang.Models.EF
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         [Required(ErrorMessage = "Tên Tiêu Đề Không Được Để Trống!")]
-        [StringLength(100)]
+        [StringLength(500)]
         public string Title { get; set; }
         public string Alias { get; set; }
         public int CategoryId { get; set; }

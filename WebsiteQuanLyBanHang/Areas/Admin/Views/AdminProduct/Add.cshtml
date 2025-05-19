@@ -143,7 +143,7 @@
                                                 <div class="form-group">
                                                     <div class="custom-control custom-checkbox">
                                                         <div class="custom-control custom-checkbox">
-                                                            @Html.CheckBoxFor(x => x.IsHot, new { @class = "custom-control-input", @id = "IsHotCheckBox" })
+                                                            @Html.CheckBoxFor(x => x.IsHot, new { @class = "custom-control-input", @id = "IsHotCheckBox", @checked = "@checked" })
                                                             <label for="IsHotCheckBox" class="custom-control-label">Hot</label>
                                                         </div>
                                                     </div>
@@ -153,8 +153,8 @@
                                                 <div class="form-group">
                                                     <div class="custom-control custom-checkbox">
                                                         <div class="custom-control custom-checkbox">
-                                                            @Html.CheckBoxFor(x => x.IsFeature, new { @class = "custom-control-input", @id = "IsFeatureCheckBox" })
-                                                            <label for="IsFeatureCheckBox" class="custom-control-label">Nổi Bật</label>
+                                                            @Html.CheckBoxFor(x => x.IsNew, new { @class = "custom-control-input", @id = "IsNewCheckBox", @checked = "@checked" })
+                                                            <label for="IsNewCheckBox" class="custom-control-label">Mới</label>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -163,16 +163,16 @@
                                                 <div class="form-group">
                                                     <div class="custom-control custom-checkbox">
                                                         <div class="custom-control custom-checkbox">
-                                                            @Html.CheckBoxFor(x => x.IsSale, new { @class = "custom-control-input", @id = "IsSaleCheckBox" })
+                                                            @Html.CheckBoxFor(x => x.IsSale, new { @class = "custom-control-input", @id = "IsSaleCheckBox", @checked = "@checked" })
                                                             <label for="IsSaleCheckBox" class="custom-control-label">Khuyến Mãi</label>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="form-group">
+                                            @*<div class="form-group">
                                                 <a href="/Admin/Product" class="btn btn-danger">Quay Lại</a>
                                                 <button type="submit" class="btn btn-primary">@ViewBag.Title</button>
-                                            </div>
+                                            </div>*@
                                         </div>
                                     </div>
                                     <!-- /.tab-pane -->

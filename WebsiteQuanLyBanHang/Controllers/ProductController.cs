@@ -35,7 +35,7 @@ namespace WebsiteQuanLyBanHang.Controllers
 
         public ActionResult PartialItemsByCategoryId()
         {
-            var items = db.Products.Where(x => x.IsHome && x.IsActive).Take(10).ToList();
+            var items = db.Products.Where(x => x.IsNew && x.IsActive).Take(10).ToList();
             return PartialView(items);
         }
 
@@ -45,7 +45,7 @@ namespace WebsiteQuanLyBanHang.Controllers
             return PartialView(items);
         }
 
-        public ActionResult ProductDetail(string alias, int id)
+        public ActionResult Detail(string alias, int id)
         {
             var item = db.Products.Find(id);
             return View(item);
